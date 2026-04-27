@@ -23,7 +23,8 @@ window.PITCH = {
 
   meta: {
     title: 'Your Name — Pitch Title',
-    description: 'One-line summary used for the meta description and link previews.'
+    description: 'One-line summary used for the meta description and link previews.',
+    image: 'https://your-deploy-url.netlify.app/shared/portfolio-teaser-social-preview.png'
   },
 
   hero: {

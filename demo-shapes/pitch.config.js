@@ -16,7 +16,8 @@ window.PITCH = {
 
   meta: {
     title: '[Your Name] — Product Design',
-    description: 'Product design for technical platforms. Systems thinking, craft, and code.'
+    description: 'Product design for technical platforms. Systems thinking, craft, and code.',
+    image: 'https://your-deploy-url.netlify.app/shared/portfolio-teaser-social-preview.png'
   },
 
   hero: {

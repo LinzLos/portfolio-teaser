@@ -22,8 +22,17 @@
 
   // ── <head> ──
   document.title = P.meta.title;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', P.meta.description || '');
+  const title = P.meta.title || '';
+  const desc  = P.meta.description || '';
+  const image = P.meta.image || '';
+  function setMeta(sel, val) { const el = document.querySelector(sel); if (el && val) el.setAttribute('content', val); }
+  setMeta('meta[name="description"]',        desc);
+  setMeta('meta[property="og:title"]',       title);
+  setMeta('meta[property="og:description"]', desc);
+  setMeta('meta[property="og:image"]',       image);
+  setMeta('meta[name="twitter:title"]',      title);
+  setMeta('meta[name="twitter:description"]',desc);
+  setMeta('meta[name="twitter:image"]',      image);
 
   // ── Hero mode ──
   // 'photo'    → cinematic image with mouse parallax (default)

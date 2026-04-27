@@ -3,6 +3,8 @@
 A static portfolio pitch template. One shared engine, one config file per pitch,
 deployed to Netlify with no build step.
 
+![portfolio-teaser preview](shared/portfolio-teaser-social-preview.png)
+
 > **Reusable as a template.** Click "Use this template" on GitHub, or clone and replace the demo config.
 
 ## Quickstart
