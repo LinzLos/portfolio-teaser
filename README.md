@@ -34,11 +34,10 @@ No build step. No HTML edits. No script edits.
 ├── shared/                   ← The engine. Used by every pitch.
 │   ├── styles.css
 │   ├── render.js             ← Hydrates the skeleton from window.PITCH
-│   ├── shape-grid.js         ← Reactive square-grid hero (mode: 'shapes')
+│   ├── shape-grid.js         ← Reactive square-grid canvas
 │   ├── behavior.js           ← Parallax, hScroll, reveals, tweaks panel
 │   ├── fonts/                ← Million-* display font (4 weights)
-│   ├── hero-mountain.webp    ← Default cinematic hero image (photo mode)
-│   ├── logo-zunigo.svg
+│   ├── logo.svg              ← Replace with your own mark
 │   └── favicon.png
 │
 ├── template-pitch/           ← Canonical empty pitch — copy this.
@@ -46,23 +45,12 @@ No build step. No HTML edits. No script edits.
 │   ├── pitch.config.js       ← Blank config with every field documented
 │   └── README.md             ← Field-by-field config reference
 │
-├── demo-shapes/              ← Live demo — hero mode: shapes
+├── demo-shapes/              ← Live demo
 │
 ├── netlify.toml              ← Root deploy config (redirects, cache headers)
 ├── LICENSE                   ← MIT
 └── README.md                 ← (this file)
 ```
-
-## Hero modes
-
-Pick per-pitch via `PITCH.hero.mode`:
-
-| mode | look | needs |
-|---|---|---|
-| `'shapes'` | Reactive square-grid canvas | nothing — adapted from [React Bits](https://github.com/DavidHDev/react-bits) |
-| `'photo'` | Cinematic image, mouse parallax | `hero.image` path (WebP recommended) |
-| `'gradient'` | Subtle radial vignette | nothing |
-| `'solid'` | Just the page bg, ultra-minimal | nothing |
 
 ## Deploy
 
@@ -73,37 +61,15 @@ Connect the repo to Netlify with publish dir set to `"."`. The root `netlify.tom
 - Long-cache `immutable` on fonts, images, and SVGs
 - Security headers
 
-## Load order
-
-```html
-<script src="pitch.config.js"></script>        <!-- defines window.PITCH -->
-<script src="../shared/render.js"></script>    <!-- builds DOM, fires "pitch:hydrated" -->
-<script src="../shared/shape-grid.js"></script><!-- only paints if mode === 'shapes' -->
-<script src="../shared/behavior.js"></script>  <!-- listens for "pitch:hydrated" -->
-```
-
-Don't reorder these tags.
-
 ## Field reference
 
 See **[`template-pitch/README.md`](./template-pitch/README.md)** for the full `pitch.config.js` field reference.
 
 ## Credits
 
-- **Default hero image** — Photo by [Brice Cooper](https://unsplash.com/@brice_cooper18) on [Unsplash](https://unsplash.com/photos/a-road-with-a-mountain-in-the-background-LazyKRVBDrY)
-- **Square-grid hero (`mode: 'shapes'`)** — adapted from the "Squares" component in [React Bits](https://github.com/DavidHDev/react-bits) (MIT)
+- **Square-grid hero** — adapted from the "Squares" component in [React Bits](https://github.com/DavidHDev/react-bits) (MIT)
 - Full attribution: [`shared/CREDITS.md`](./shared/CREDITS.md)
 
 ## License
 
 MIT. See [LICENSE](./LICENSE).
-
-## Known follow-ups
-
-- [x] ~~Re-export `hero-mountain.png` as WebP~~ ✓
-- [x] ~~Carve out `/template-pitch/` for clean cloning~~ ✓
-- [x] ~~Add `hero.mode` switch~~ ✓
-- [x] ~~Add LICENSE + .gitignore~~ ✓
-- [x] ~~Fix Netlify deploy model (root publish, shared cache headers)~~ ✓
-- [ ] Add a JSON Schema or TS types for `PITCH` so configs validate
-- [ ] Migrate to React/Vite when the multi-pitch pattern starts to chafe
