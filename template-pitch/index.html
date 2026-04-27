@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#080806">
+  <meta name="description" content="">
+  <title>Pitch</title>
+
+  <link rel="icon" type="image/png" href="../shared/favicon.png">
+  <link rel="apple-touch-icon" href="../shared/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;family=Geist:wght@400;500;600;700&amp;family=Monofett&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared/styles.css?v=24">
+</head>
+<body>
+
+  <!-- ── HERO ──
+       Skeleton ships BOTH backgrounds; render.js adds
+       .hero--photo or .hero--shapes from PITCH.hero.mode
+       and CSS hides the unused one. -->
+  <section id="hero">
+    <!-- mode: 'photo' -->
+    <div class="hero-bg"></div>
+
+    <!-- mode: 'shapes' (React Bits-derived; see shared/CREDITS.md) -->
+    <canvas id="shapeGridBg" aria-hidden="true"></canvas>
+
+    <!-- mode: 'gradient' -->
+    <div class="hero-gradient" aria-hidden="true"></div>
+
+    <!-- mode: 'solid' renders nothing — body bg shows through -->
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <a href="#" class="hero-logo" aria-label="Portfolio">
+      <img src="../shared/logo.svg" alt="Your logo">
+    </a>
+
+    <div class="hero-tagline" id="heroTagline">
+      <div class="ht-lines" id="heroTaglineLines">
+        <!-- hydrated by render.js from PITCH.hero.tagline -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Content scrolls over hero like window shade -->
+  <div id="pageContent"></div>
+
+  <!-- ── RANGE — horizontal scroll ── -->
+  <div id="hScroll">
+    <div id="hSticky">
+      <div id="hProgress"></div>
+      <div id="hTrack">
+        <div class="h-intro" id="rangeIntro">
+          <!-- hydrated -->
+        </div>
+        <!-- pillars are inserted here by render.js -->
+        <div class="h-end"></div>
+      </div>
+
+      <div id="hDots" role="tablist" aria-label="Range sections">
+        <!-- hydrated -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STATEMENT ── -->
+  <section id="statement">
+    <div class="statement-label" id="statementLabel"><!-- hydrated --></div>
+    <div class="statement-inner">
+      <div class="statement-text" id="statementText"><!-- hydrated --></div>
+      <div class="statement-para" id="statementPara"><!-- hydrated --></div>
+    </div>
+  </section>
+
+  <div class="section-divider" id="divider2" aria-hidden="true"></div>
+
+  <!-- ── DECRYPT INTERSTITIAL ── -->
+  <section id="decrypt" data-screen-label="Decrypt interstitial">
+    <h2 class="decrypt-line" data-final="SYSTEMS DON'T">SYSTEMS DON'T</h2>
+    <h2 class="decrypt-line" data-final="EXPLAIN THEMSELVES">EXPLAIN THEMSELVES</h2>
+  </section>
+
+  <div class="section-divider" id="divider3" aria-hidden="true"></div>
+
+  <!-- ── CTA ── -->
+  <section id="cta">
+    <div class="cta-label" id="ctaLabel"><!-- hydrated --></div>
+    <div class="cta-headline" id="ctaHeadline"><!-- hydrated --></div>
+    <div class="cta-links" id="ctaLinks"><!-- hydrated --></div>
+    <div class="cta-footer">
+      <a href="#" class="cta-mark" aria-label="Portfolio">
+        <img src="../shared/logo.svg" alt="Your logo">
+      </a>
+      <div class="cta-name" id="ctaName"><!-- hydrated --></div>
+      <div class="cta-meta" id="ctaMeta"><!-- hydrated --></div>
+    </div>
+  </section>
+
+  <!-- ── Tweaks panel (chrome only; behavior.js wires it) ── -->
+  <div id="tweaksPanel" role="dialog" aria-label="Tweaks">
+    <div class="tw-header">
+      <div class="tw-title">Tweaks</div>
+      <button class="tw-close" id="twClose" aria-label="Close tweaks">×</button>
+    </div>
+    <div class="tw-row tw-color-row">
+      <label for="twAccent">Accent color</label>
+      <input type="color" id="twAccent">
+    </div>
+    <div class="tw-row">
+      <label>Headline scale <span class="val" id="twScaleVal">1.00×</span></label>
+      <input type="range" id="twScale" min="0.7" max="1.3" step="0.01">
+    </div>
+    <div class="tw-row">
+      <label>Pillar hover ease <span class="val" id="twHoverVal">560ms</span></label>
+      <input type="range" id="twHover" min="300" max="900" step="20">
+    </div>
+    <div class="tw-row tw-toggle">
+      <label>Section divider</label>
+      <div class="tw-switch" id="twDivider" role="switch" tabindex="0"></div>
+    </div>
+  </div>
+
+  <!-- Order matters: config → render → behavior -->
+  <script src="pitch.config.js?v=1"></script>
+  <script src="../shared/render.js?v=5"></script>
+  <script src="../shared/shape-grid.js?v=4"></script>
+  <script src="../shared/behavior.js"></script>
+</body>
+</html>

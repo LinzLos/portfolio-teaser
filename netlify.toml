@@ -1,0 +1,48 @@
+[build]
+  publish = "."
+
+# Redirect bare root to the live demo
+[[redirects]]
+  from = "/"
+  to   = "/demo-shapes/"
+  status = 302
+
+# Security headers for everything
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Always revalidate shared JS and CSS — no manual cache-buster bumps needed
+[[headers]]
+  for = "/shared/*.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/shared/*.css"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Long-cache immutable assets — only update by changing the filename
+[[headers]]
+  for = "/shared/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/shared/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/shared/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/shared/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
