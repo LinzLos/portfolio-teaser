@@ -15,8 +15,9 @@ this site (drift, hover trail, fade). Licensed MIT.
 
 ## Fonts
 
-- **Million** (display) — local files in `shared/fonts/`. Replace if you
-  don't hold a license for it.
+- **Anton** (display) — Google Fonts CDN, free under SIL Open Font License.
+  To use a different display typeface, update `--font-display` in `shared/styles.css`
+  and load the font via the `<link>` tag in your pitch's `index.html`.
 - **DM Sans**, **Geist**, **Monofett** — Google Fonts (open licenses).
 
 ---

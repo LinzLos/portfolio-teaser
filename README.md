@@ -38,7 +38,7 @@ No build step. No HTML edits. No script edits.
 │   ├── render.js             ← Hydrates the skeleton from window.PITCH
 │   ├── shape-grid.js         ← Reactive square-grid canvas
 │   ├── behavior.js           ← Parallax, hScroll, reveals, tweaks panel
-│   ├── fonts/                ← Million-* display font (4 weights)
+│   ├── fonts/                ← (empty — Anton loads via Google Fonts CDN)
 │   ├── logo.svg              ← Replace with your own mark
 │   └── favicon.png
 │
@@ -66,6 +66,12 @@ Connect the repo to Netlify with publish dir set to `"."`. The root `netlify.tom
 ## Field reference
 
 See **[`template-pitch/README.md`](./template-pitch/README.md)** for the full `pitch.config.js` field reference.
+
+## Typography
+
+The display typeface in the live demo is **Million** by Rajesh Rajput. Million is a licensed typeface — you can purchase it from him directly if you want to use it.
+
+This template ships with **Anton** ([Google Fonts](https://fonts.google.com/specimen/Anton), free under SIL OFL) as the default display typeface so you can fork and use without licensing anything. To swap in your own typeface, update the `--font-display` CSS variable in [`shared/styles.css`](./shared/styles.css) and load your font in the `<link>` tag inside your pitch's `index.html`.
 
 ## Credits
 

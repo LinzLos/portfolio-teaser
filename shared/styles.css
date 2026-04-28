@@ -8,46 +8,19 @@
 html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, figure, blockquote { margin: 0; padding: 0; }
 
 :root {
-  --bg:        #080806;
-  --cream:     #F2EDE4;
-  --cream-dim: rgba(242,237,228,.50);
-  --accent:    #F0C93A;
+  --bg:           #080806;
+  --cream:        #F2EDE4;
+  --cream-dim:    rgba(242,237,228,.50);
+  --accent:       #F0C93A;
   --pillar-hover-ms: 560ms;
   --headline-scale: 1;
-  --display:   'Million', 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
-  --body:      'DM Sans', sans-serif;
-  --sub:       'Geist', sans-serif;
-  --pad:       clamp(20px, 6vw, 80px);
-}
-
-@font-face {
-  font-family: 'Million';
-  src: url('fonts/Million-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Million';
-  src: url('fonts/Million-Black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Million BlackInktrap';
-  src: url('fonts/Million-BlackInktrap.woff2') format('woff2'),
-       url('fonts/Million-BlackInktrap.woff')  format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Million LightInktrap';
-  src: url('fonts/Million-LightInktrap.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  /* Swap this variable to change the display typeface across the whole template.
+     Anton is free under SIL OFL (fonts.google.com/specimen/Anton).
+     Load your chosen typeface via the <link> tag in index.html, then update this value. */
+  --font-display: 'Anton', 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+  --body:         'DM Sans', sans-serif;
+  --sub:          'Geist', sans-serif;
+  --pad:          clamp(20px, 6vw, 80px);
 }
 
 html {
@@ -220,7 +193,7 @@ body::after {
 }
 
 .ht-line {
-  font-family: 'Million BlackInktrap', 'Million', 'Bebas Neue', 'Impact', sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   line-height: .88;
@@ -229,6 +202,7 @@ body::after {
   font-size: calc(clamp(36px, 10.5vw, 200px) * var(--headline-scale));
   white-space: nowrap;
   letter-spacing: 0.01em;
+  word-spacing: 0.3em;
   opacity: 0;
   transform: translateY(24px);
 }
@@ -296,13 +270,14 @@ body::after {
 }
 
 .range-headline {
-  font-family: var(--display);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(68px, 11vw, 180px);
-  line-height: .86;
+  line-height: 1.0;
   text-transform: uppercase;
   margin-top: clamp(12px, 2vw, 20px);
   letter-spacing: 0.01em;
+  word-spacing: 0.3em;
 }
 .range-headline em { color: var(--accent); font-style: normal; }
 
@@ -373,7 +348,7 @@ body::after {
 }
 
 .pillar-number {
-  font-family: 'Million LightInktrap', 'Million', 'Bebas Neue', 'Impact', sans-serif;
+  font-family: var(--font-display);
   font-weight: 300;
   font-size: clamp(40px, 4.5vw, 72px);
   line-height: 1;
@@ -382,7 +357,7 @@ body::after {
   margin-bottom: clamp(14px, 2vw, 20px);
 }
 .pillar-title {
-  font-family: var(--display);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(22px, 2.2vw, 34px);
   text-transform: uppercase;
@@ -592,12 +567,13 @@ body::after {
 .statement-label.visible { opacity: 1; transform: translateY(0); }
 
 .statement-text {
-  font-family: 'Million BlackInktrap', 'Million', 'Bebas Neue', 'Impact', sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: calc(clamp(56px, 11vw, 180px) * var(--headline-scale));
-  line-height: .84;
+  line-height: 1.0;
   text-transform: uppercase;
   letter-spacing: .01em;
+  word-spacing: 0.3em;
 }
 .statement-text .st-line {
   display: block;
@@ -650,11 +626,12 @@ body::after {
 }
 
 .cta-headline {
-  font-family: 'Million BlackInktrap', 'Million', 'Bebas Neue', 'Impact', sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: calc(clamp(72px, 13vw, 200px) * var(--headline-scale));
-  line-height: .84;
+  line-height: 1.0;
   letter-spacing: .01em;
+  word-spacing: 0.3em;
   text-transform: uppercase;
   margin-bottom: clamp(24px, 3vw, 40px);
 }
