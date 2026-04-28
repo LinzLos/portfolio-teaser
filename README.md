@@ -69,7 +69,7 @@ See **[`template-pitch/README.md`](./template-pitch/README.md)** for the full `p
 
 ## Typography
 
-The display typeface in the live demo is **Million** by Rajesh Rajput. Million is a licensed typeface — you can purchase it from him directly if you want to use it.
+The display typeface in the live demo is [**Million**](https://rajputrajesh-448.gumroad.com/l/Million9?layout=profile) by Rajesh Rajput. Million is a licensed typeface — you can purchase it from him directly if you want to use it.
 
 This template ships with **Anton** ([Google Fonts](https://fonts.google.com/specimen/Anton), free under SIL OFL) as the default display typeface so you can fork and use without licensing anything. To swap in your own typeface, update the `--font-display` CSS variable in [`shared/styles.css`](./shared/styles.css) and load your font in the `<link>` tag inside your pitch's `index.html`.
 
